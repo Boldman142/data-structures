@@ -22,7 +22,7 @@ class Stack:
 
     def __init__(self):
         """Конструктор класса Stack"""
-        self.top = Node()
+        self.top = None
 
 
     def push(self, data):

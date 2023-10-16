@@ -13,6 +13,15 @@ class TestStack(unittest.TestCase):
         self.assertTrue(a)
 
 
+    def test_pop(self):
+        a = Stack()
+        new_data = "data1"
+        a.push(new_data)
+        get_ = a.pop()
+        # print(get_)
+        # print(new_data)
+        self.assertEqual(get_, new_data)
+
 
 
 if __name__ == '__main__':
