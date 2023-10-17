@@ -31,8 +31,13 @@ class Stack:
 
         :data: данные, которые будут добавлены на вершину стека
         """
-        new = Node(data)
-        self.top = Node(new, self.top)
+
+
+        next = self.top
+        new = Node(data, next)
+        self.top = new
+        # new = Node(data)
+        # self.top = Node(new, self.top)
 
 
     def pop(self):
@@ -41,7 +46,8 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-
+        if self.top is None:
+            return None
         pop_ = self.top.data
         self.top.data = self.top.next_node
         return pop_
