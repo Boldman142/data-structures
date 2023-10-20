@@ -10,8 +10,8 @@ class Node:
         self.data = data
         self.next_node = next_node
 
-    def __str__(self):
-        return str(self.data)
+    # def __repr__(self):
+    #     return self.data
 
 
 class Stack:
@@ -21,6 +21,12 @@ class Stack:
         """Конструктор класса Stack"""
         self.top = None
 
+    def __str__(self):
+        if self.top is None:
+            return "Стэк пустой"
+        else:
+            return f"{self.top.data} next({self.top.next_node})"
+
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека
@@ -28,11 +34,9 @@ class Stack:
         :data: данные, которые будут добавлены на вершину стека
         """
 
-        next = self.top
-        new = Node(data, next)
+        next_ = self.top
+        new = Node(data, next_)
         self.top = new
-        # new = Node(data)
-        # self.top = Node(new, self.top)
 
     def pop(self):
         """
@@ -43,5 +47,14 @@ class Stack:
         if self.top is None:
             return None
         pop_ = self.top.data
-        self.top.data = self.top.next_node
+        self.top = self.top.next_node
         return pop_
+
+# q = Stack()
+# print(q)
+# q.push(1)
+# print(q)
+# q.push(2)
+# print(q)
+# q.push(3)
+# print(q)
