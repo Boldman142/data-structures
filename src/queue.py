@@ -16,7 +16,7 @@ class Queue:
 
     def __init__(self):
         """Конструктор класса Queue"""
-        self.tail = None
+        self.tail = Node(None, None)
         self.head = Node(None, self.tail)
         self.all = []
 
@@ -32,7 +32,7 @@ class Queue:
         # self.tail = Node(data, None)
         new_data = Node(data, None)
 
-        if self.head is None:
+        if self.head.data is None:
             self.head = new_data
             self.tail = new_data
             self.all.append(data)
@@ -55,8 +55,8 @@ class Queue:
 
         :return: данные удаленного элемента
         """
-        return self.eq.pop(0)
+        pass
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
-        pass
+        return "\n".join(self.all)
