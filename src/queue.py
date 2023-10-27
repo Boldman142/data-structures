@@ -20,16 +20,17 @@ class Queue:
         self.head = Node(None, self.tail)
         self.all = []
 
+    def __str__(self):
+        """Магический метод для строкового представления объекта"""
+        return "\n".join(self.all)
+
     def enqueue(self, data):
         """
         Метод для добавления элемента в очередь
 
         :param data: данные, которые будут добавлены в очередь
         """
-        # if self.head.data is None:
-        #     self.head.data = data
-        # # self.head = Node(data, self.tail)
-        # self.tail = Node(data, None)
+
         new_data = Node(data, None)
 
         if self.head.data is None:
@@ -41,13 +42,6 @@ class Queue:
             self.tail = new_data
             self.all.append(data)
 
-        # old_head = self.head
-        # old_tail = self.tail
-        #
-        # self.head = Node(data, old_head)
-        # # new_ = Node(data, self.head)
-        # self.tail = new_
-
     def dequeue(self):
         """
         Метод для удаления элемента из очереди.
@@ -55,8 +49,8 @@ class Queue:
 
         :return: данные удаленного элемента
         """
-        pass
-
-    def __str__(self):
-        """Магический метод для строкового представления объекта"""
-        return "\n".join(self.all)
+        if self.head is None:
+            return None
+        prop = self.head.data
+        self.head = self.head.next_node
+        return prop
