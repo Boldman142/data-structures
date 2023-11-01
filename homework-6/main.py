@@ -10,8 +10,8 @@ if __name__ == '__main__':
     ll.insert_beginning({'id': 0, 'username': 'serebro'})
 
     # метод to_list()
-    # lst = ll.to_list()
-    # for item in lst: print(item)
+    lst = ll.to_list()
+    for item in lst: print(item)
     # {'id': 0, 'username': 'serebro'}
     # {'id': 1, 'username': 'lazzy508509'}
     # {'id': 2, 'username': 'mik.roz'}
