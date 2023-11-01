@@ -32,5 +32,11 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(ll.tail.data, {'id': 15})
 
 
+    def test_to_list(self):
+        ll = LinkedList()
+        ll.insert_at_end({'id': 1})
+        ll.insert_beginning({'id': 13})
+        self.assertEqual(str(ll), [{'id': 1}, {'id': 13}])
+
 if __name__ == '__main__':
     unittest.main()
