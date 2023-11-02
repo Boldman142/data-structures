@@ -73,19 +73,27 @@ class LinkedList:
         # return "Элемента с таким id нет"
         node = self.head
         while node:
-            if not node.data:
-                break
+            # if not node.data:
+            #     break
+            # try:
+            #     # print(node.data.get("id"))
+            #     assert node.data.get("id", TypeError) == user_id
+            # except TypeError:
+            #     raise DictExcept
+            # except AttributeError:
+            #     raise DictExcept
+            # except AssertionError:
+            #     node = node.next_node
+            #     continue
+            # else:
+            #     return node.data
             try:
-                # print(node.data.get("id"))
-                assert node.data.get("id", TypeError) == user_id
-            except TypeError:
-                raise DictExcept
+                if user_id == node.data.get('id'):
+                    return node.data
+                node = node.next_node
             except AttributeError:
-                raise DictExcept
-            except AssertionError:
+                print('Данные не являются словарем или в словаре нет id.')
                 node = node.next_node
                 continue
-            else:
-                return node.data
             # finally:
             #     node = node.next_node
